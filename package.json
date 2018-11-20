@@ -1,7 +1,7 @@
 {
-  "name": "jw-boilerplate",
+  "name": "front-build",
   "version": "0.1.0",
-  "description": "",
+  "description": "A tiny build system I use for my front-end assets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack",
