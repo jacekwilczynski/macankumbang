@@ -1,7 +1,6 @@
 {
-  "name": "front-build",
+  "name": "macankumbang",
   "version": "0.1.0",
-  "description": "A tiny build system I use for my front-end assets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack",
