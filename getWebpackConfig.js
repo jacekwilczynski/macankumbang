@@ -16,13 +16,7 @@ module.exports = function getWebpackConfig({
     output: outputPath && { path: path.resolve(outputPath) },
     mode: devMode ? 'development' : 'production',
     devtool: devMode && 'cheap-module-eval-source-map',
-    plugins: [
-      new CleanWebpackPlugin([outputPath]),
-      new MiniCssExtractPlugin({
-        filename: hashCss ? '[name].[hash].css' : '[name].css',
-        chunkFilename: hashCss ? '[id].[hash].css' : '[id].css'
-      })
-    ],
+    plugins: [new CleanWebpackPlugin([outputPath]), new MiniCssExtractPlugin()],
     module: {
       rules: [
         {
