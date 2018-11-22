@@ -1,0 +1,23 @@
+@import 'typography/preferences';
+
+.navbar {
+  $navbar-height: 4 * $unit-base;
+  $brand-height: 2 * $unit-base;
+
+  background-color: #0d0b11;
+  color: #fff;
+
+  &__brand {
+    $padding-y: ($navbar-height - $brand-height) / 2;
+    font-size: $brand-height;
+    line-height: 1;
+    display: block;
+    padding-top: $padding-y;
+    padding-bottom: $padding-y;
+  }
+
+  &__menu {
+    list-style: none;
+    margin-top: 0;
+  }
+}
