@@ -1,0 +1,9 @@
+@import 'typography/preferences';
+
+.container {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 1200px;
+  padding-left: $unit-base;
+  padding-right: $unit-base;
+}
