@@ -4,25 +4,47 @@
 .navbar {
   $navbar-height: 4 * $unit-base;
   $brand-height: 2 * $unit-base;
+  $brand-padding-vertical: ($navbar-height - $brand-height) / 2;
+  $breakpoint: 850px;
+  $menu-desktop-float: right;
+  $menu-font-level-mobile: 2;
+  $menu-font-level-desktop: 1;
+  $link-desktop-padding-horizontal: $unit-base;
 
   background-color: #0d0b11;
   color: #fff;
 
   &__brand {
-    $vertical-padding: ($navbar-height - $brand-height) / 2;
-    display: block;
+    display: inline-block;
     font-size: $brand-height;
     line-height: 1;
-    padding-top: $vertical-padding;
-    padding-bottom: $vertical-padding;
+    padding-top: $brand-padding-vertical;
+    padding-bottom: $brand-padding-vertical;
   }
 
   &__menu {
-    @include font-level(2);
+    @include font-level($menu-font-level-mobile);
     text-align: center;
+
+    @media (min-width: $breakpoint) {
+      float: $menu-desktop-float;
+      @include font-level($menu-font-level-desktop);
+    }
   }
 
   &__item {
+    @media (min-width: $breakpoint) {
+      float: left;
+    }
+  }
+
+  &__link {
+    display: block;
     padding-bottom: $unit-base;
+
+    @media (min-width: $breakpoint) {
+      $link-desktop-padding-vertical: ($navbar-height - line-height($menu-font-level-desktop)) / 2;
+      padding: $link-desktop-padding-vertical $link-desktop-padding-horizontal;
+    }
   }
 }
