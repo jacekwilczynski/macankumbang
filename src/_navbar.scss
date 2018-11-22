@@ -8,16 +8,25 @@
   color: #fff;
 
   &__brand {
-    $padding-y: ($navbar-height - $brand-height) / 2;
+    $vertical-padding: ($navbar-height - $brand-height) / 2;
+    display: block;
     font-size: $brand-height;
     line-height: 1;
-    display: block;
-    padding-top: $padding-y;
-    padding-bottom: $padding-y;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
   }
 
   &__menu {
+    // Reset list defaults
     list-style: none;
     margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    // Ensure some space is left at the bottom
+    padding-bottom: $unit-base;
+
+    // Alignemnt
+    text-align: center;
   }
 }
