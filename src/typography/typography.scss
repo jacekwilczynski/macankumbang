@@ -3,7 +3,7 @@
 
 :root {
   font-size: $font-size-base;
-  line-height: $unit-base;
+  line-height: $unit-base / 1rem;
 }
 
 @for $i from 1 through 6 {
