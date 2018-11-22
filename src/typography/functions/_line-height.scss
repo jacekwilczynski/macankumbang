@@ -1,0 +1,9 @@
+@import '../preferences';
+@import 'font-size';
+
+@function line-height($level) {
+  $font-size: font-size($level);
+  $min-units: ceil($font-size / $unit-base);
+  $min-rem: $min-units * $unit-base;
+  @return $min-rem / $font-size;
+}

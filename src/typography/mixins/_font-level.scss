@@ -1,0 +1,7 @@
+@import '../functions/font-size';
+@import '../functions/line-height';
+
+@mixin font-level($level) {
+  font-size: font-size($level);
+  line-height: line-height($level);
+}

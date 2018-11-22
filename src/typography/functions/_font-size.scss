@@ -1,0 +1,6 @@
+@import '../../utils/pow';
+@import '../preferences';
+
+@function font-size($level) {
+  @return pow($font-growth-factor, $level - 1) * 1rem;
+}
