@@ -1,0 +1,16 @@
+$font-size-base: (14 / 16) * 100%;
+$unit-base: (20/14) * 1rem;
+
+@import 'typography/typography';
+@import 'container';
+@import 'navbar';
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
