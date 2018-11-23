@@ -4,20 +4,11 @@ $unit-base: (20 / 14) * 1rem;
 @import 'typography/typography';
 @import 'utils/list-unstyled';
 @import 'utils/clearfix';
+@import 'global';
 @import 'container';
 @import 'navbar';
 
 @include typography-all;
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
 
 .container {
   @include container($max-width: 60 * $unit-base, $padding-horizontal: $unit-base)
