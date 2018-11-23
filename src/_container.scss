@@ -1,10 +1,8 @@
-@import 'typography/preferences';
-
-.container {
+@mixin container($width: 100vw, $max-width: 1200px, $padding-horizontal: 1rem) {
   box-sizing: border-box;
-  width: 100vw;
-  max-width: 1200px;
+  width: $width;
+  max-width: $max-width;
   margin: 0 auto;
-  padding-left: $unit-base;
-  padding-right: $unit-base;
+  padding-left: $padding-horizontal;
+  padding-right: $padding-horizontal;
 }

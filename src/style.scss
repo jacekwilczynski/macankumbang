@@ -18,3 +18,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+.container {
+  @include container($max-width: 60 * $unit-base, $padding-horizontal: $unit-base)
+}
