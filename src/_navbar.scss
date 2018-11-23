@@ -12,12 +12,17 @@ $hamburger-height: 2 * $unit-base;
   @include navbar(
     $unit-base: $unit-base,
     $navbar-height: $navbar-height,
-    $brand-height: 2 * $unit-base,
     $toggler-height: 2 * $unit-base,
     $breakpoint: $navbar-breakpoint,
     $background-color: #0d0b11,
     $color: #fff
   );
+}
+
+.navbar-brand {
+  $brand-height: 2 * $unit-base;
+  font-size: $brand-height;
+  line-height: $navbar-height;
 }
 
 .navbar-menu {
@@ -32,6 +37,7 @@ $hamburger-height: 2 * $unit-base;
   text-align: center;
 
   @media (min-width: $navbar-breakpoint) {
+    float: right;
     font-size: font-size(1);
   }
 }
