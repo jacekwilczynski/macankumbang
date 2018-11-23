@@ -1,8 +1,7 @@
-/// No CSS output
-
-$font-size-base: (14 / 16) * 100%;
-$unit-base: (20 / 14) * 1rem;
-
+//
+// Logic (no CSS output)
+//
+@import 'preferences/typography';
 @import 'typography/typography';
 @import 'typography/functions/font-size';
 @import 'typography/functions/line-height';
@@ -10,9 +9,9 @@ $unit-base: (20 / 14) * 1rem;
 @import 'utils/clearfix';
 @import 'mixins/container';
 @import 'mixins/navbar';
-
-/// CSS output
-
+//
+// CSS output
+//
 @import 'global';
 
 @include typography-all;

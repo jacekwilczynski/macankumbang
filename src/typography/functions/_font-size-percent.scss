@@ -1,0 +1,3 @@
+@function font-size-percent($absolute, $browser-default: 16px) {
+  @return $absolute / $browser-default * 100%;
+}

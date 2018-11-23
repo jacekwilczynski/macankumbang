@@ -1,0 +1,9 @@
+// Preferences expressed in px - only used in the calculations below
+$font-size-base-px: 14px;
+$unit-base-px: 20px;
+
+// Calculated relative values - these will be actually used
+@import '../typography/functions/font-size-percent';
+@import '../typography/functions/unit-base-rem';
+$font-size-base: font-size-percent($font-size-base-px);
+$unit-base: unit-base-rem($unit-base-px, $font-size-base-px);
