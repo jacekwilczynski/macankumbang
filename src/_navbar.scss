@@ -1,0 +1,30 @@
+@import 'typography/functions/font-size';
+@import 'typography/functions/line-height';
+@import 'mixins/navbar';
+@import 'mixins/hamburger';
+
+$hamburger-height: 2 * $unit-base;
+
+.navbar {
+  @include navbar(
+    $unit-base: $unit-base,
+    $navbar-height: 4 * $unit-base,
+    $brand-height: 2 * $unit-base,
+    $toggler-height: 2 * $unit-base,
+    $breakpoint: 50em,
+    $menu-mobile-font-size: font-size(2),
+    $menu-mobile-line-height: line-height(2),
+    $link-desktop-padding-horizontal: $unit-base,
+    $background-color: #0d0b11,
+    $color: #fff
+  );
+}
+
+.hamburger {
+  @include hamburger(
+    $width: 1.25 * $hamburger-height,
+    $height: $hamburger-height,
+    $fill: #fff,
+    $spacing: 1
+  );
+}

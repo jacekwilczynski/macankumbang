@@ -3,16 +3,16 @@
 //
 @import 'preferences/typography';
 @import 'typography/typography';
-@import 'typography/functions/font-size';
-@import 'typography/functions/line-height';
 @import 'utils/list-unstyled';
+@import 'utils/button-unstyled';
+@import 'utils/float-right';
 @import 'utils/clearfix';
 @import 'mixins/container';
-@import 'mixins/navbar';
 //
 // CSS output
 //
 @import 'global';
+@import 'navbar';
 
 @include typography-all;
 
@@ -20,19 +20,5 @@
   @include container(
     $max-width: 60 * $unit-base,
     $padding-horizontal: $unit-base
-  );
-}
-
-.navbar {
-  @include navbar(
-    $unit-base: $unit-base,
-    $navbar-height: 4 * $unit-base,
-    $brand-height: 2 * $unit-base,
-    $breakpoint: 50em,
-    $menu-mobile-font-size: font-size(2),
-    $menu-mobile-line-height: line-height(2),
-    $link-desktop-padding-horizontal: $unit-base,
-    $background-color: #0d0b11,
-    $color: #fff
   );
 }

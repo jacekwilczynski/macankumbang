@@ -1,0 +1,16 @@
+@mixin hamburger($width, $height, $fill, $number-of-bars: 3, $spacing: 1) {
+  $number-of-spacers: $number-of-bars - 1;
+  $bar-height: $height / ($number-of-bars + $number-of-spacers * $spacing);
+  $spacer-height: $bar-height * $spacing;
+
+  &__bar {
+    display: block;
+    width: $width;
+    height: $bar-height;
+    background: $fill;
+
+    &:not(:last-child) {
+      margin-bottom: $spacer-height;
+    }
+  }
+}

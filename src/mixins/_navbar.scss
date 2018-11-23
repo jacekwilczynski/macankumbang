@@ -1,7 +1,8 @@
 @mixin navbar(
-  $unit-base,
-  $navbar-height,
-  $brand-height,
+  $unit-base: 1rem,
+  $navbar-height: 4rem,
+  $brand-height: 2rem,
+  $toggler-height: 2rem,
   $breakpoint: 48em,
   $menu-desktop-float: right,
   $menu-mobile-font-size: inherit,
@@ -13,6 +14,7 @@
   $color: inherit
 ) {
   $brand-padding-vertical: ($navbar-height - $brand-height) / 2;
+  $toggler-padding-vertical: ($navbar-height - $toggler-height) / 2;
 
   background-color: $background-color;
   color: $color;
@@ -51,6 +53,15 @@
     @media (min-width: $breakpoint) {
       $link-desktop-padding-vertical: ($navbar-height - $menu-desktop-line-height) / 2;
       padding: $link-desktop-padding-vertical $link-desktop-padding-horizontal;
+    }
+  }
+
+  &__toggler {
+    float: $menu-desktop-float;
+    padding-top: $toggler-padding-vertical;
+
+    @media (min-width: $breakpoint) {
+      display: none;
     }
   }
 }
