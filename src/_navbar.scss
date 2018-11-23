@@ -26,21 +26,17 @@ $hamburger-height: 2 * $unit-base;
 .navbar-menu {
   @include navbar-menu(
     $breakpoint: $navbar-breakpoint,
-    $mobile: (
-      link-padding-bottom: $unit-base
-    ),
-    $desktop: (
-      height: $navbar-height,
-      link-padding-horizontal: $unit-base
-    )
-  ) {
-    font-size: font-size(2);
-    text-align: center;
+    $mobile-link-padding-bottom: $unit-base,
+    $desktop-height: $navbar-height,
+    $desktop-link-padding-horizontal: $unit-base
+  );
 
-    @media (min-width: $navbar-breakpoint) {
-      font-size: font-size(1);
-    }
-  };
+  font-size: font-size(2);
+  text-align: center;
+
+  @media (min-width: $navbar-breakpoint) {
+    font-size: font-size(1);
+  }
 }
 
 .hamburger {

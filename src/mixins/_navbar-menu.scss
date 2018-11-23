@@ -1,6 +1,11 @@
-@mixin navbar-menu($breakpoint, $mobile, $desktop) {
+@mixin navbar-menu(
+  $breakpoint,
+  $mobile-link-padding-bottom,
+  $desktop-link-padding-horizontal,
+  $desktop-height
+) {
   @media (min-width: $breakpoint) {
-    margin-right: -(map_get($desktop, link-padding-horizontal));
+    margin-right: -($desktop-link-padding-horizontal);
   }
 
   &__item {
@@ -11,15 +16,13 @@
 
   &__link {
     display: block;
-    padding-bottom: map_get($mobile, link-padding-bottom);
+    padding-bottom: $mobile-link-padding-bottom;
 
     @media (min-width: $breakpoint) {
       padding-bottom: 0;
-      padding-left: map_get($desktop, link-padding-horizontal);
-      padding-right: map_get($desktop, link-padding-horizontal);
-      line-height: map_get($desktop, height);
+      padding-left: $desktop-link-padding-horizontal;
+      padding-right: $desktop-link-padding-horizontal;
+      line-height: $desktop-height;
     }
   }
-
-  @content;
 }
