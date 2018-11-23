@@ -1,18 +1,22 @@
 @import 'typography/preferences';
 @import 'typography/mixins/font-level';
 
-.navbar {
-  $navbar-height: 4 * $unit-base;
-  $brand-height: 2 * $unit-base;
+@mixin navbar(
+  $unit-base,
+  $navbar-height,
+  $brand-height,
+  $breakpoint: 48em,
+  $menu-desktop-float: right,
+  $menu-font-level-mobile: 1,
+  $menu-font-level-desktop: 1,
+  $link-desktop-padding-horizontal: 1em,
+  $background-color: inherit,
+  $color: inherit
+) {
   $brand-padding-vertical: ($navbar-height - $brand-height) / 2;
-  $breakpoint: 50em;
-  $menu-desktop-float: right;
-  $menu-font-level-mobile: 2;
-  $menu-font-level-desktop: 1;
-  $link-desktop-padding-horizontal: $unit-base;
 
-  background-color: #0d0b11;
-  color: #fff;
+  background-color: $background-color;
+  color: $color;
 
   &__brand {
     display: inline-block;

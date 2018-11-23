@@ -11,5 +11,21 @@ $unit-base: (20 / 14) * 1rem;
 @include typography-all;
 
 .container {
-  @include container($max-width: 60 * $unit-base, $padding-horizontal: $unit-base)
+  @include container(
+    $max-width: 60 * $unit-base,
+    $padding-horizontal: $unit-base
+  );
+}
+
+.navbar {
+  @include navbar(
+    $unit-base: $unit-base,
+    $navbar-height: 4 * $unit-base,
+    $brand-height: 2 * $unit-base,
+    $breakpoint: 50em,
+    $menu-font-level-mobile: 2,
+    $link-desktop-padding-horizontal: $unit-base,
+    $background-color: #0d0b11,
+    $color: #fff
+  );
 }
