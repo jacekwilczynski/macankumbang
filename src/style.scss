@@ -1,12 +1,17 @@
+/// No CSS output
+
 $font-size-base: (14 / 16) * 100%;
 $unit-base: (20 / 14) * 1rem;
 
 @import 'typography/typography';
 @import 'utils/list-unstyled';
 @import 'utils/clearfix';
+@import 'mixins/container';
+@import 'mixins/navbar';
+
+/// CSS output
+
 @import 'global';
-@import 'container';
-@import 'navbar';
 
 @include typography-all;
 
