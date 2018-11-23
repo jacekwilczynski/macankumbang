@@ -32,7 +32,7 @@
 
     @media (min-width: $breakpoint) {
       float: $menu-desktop-float;
-      margin-right: -($link-desktop-padding-horizontal);
+      margin-#{$menu-desktop-float}: -($link-desktop-padding-horizontal);
       font-size: $menu-desktop-font-size;
       line-height: $menu-desktop-line-height;
     }
