@@ -4,6 +4,8 @@ $font-size-base: (14 / 16) * 100%;
 $unit-base: (20 / 14) * 1rem;
 
 @import 'typography/typography';
+@import 'typography/functions/font-size';
+@import 'typography/functions/line-height';
 @import 'utils/list-unstyled';
 @import 'utils/clearfix';
 @import 'mixins/container';
