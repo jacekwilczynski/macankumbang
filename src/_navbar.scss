@@ -1,14 +1,13 @@
-@import 'typography/preferences';
-@import 'typography/mixins/font-level';
-
 @mixin navbar(
   $unit-base,
   $navbar-height,
   $brand-height,
   $breakpoint: 48em,
   $menu-desktop-float: right,
-  $menu-font-level-mobile: 1,
-  $menu-font-level-desktop: 1,
+  $menu-mobile-font-size: inherit,
+  $menu-mobile-line-height: inherit,
+  $menu-desktop-font-size: inherit,
+  $menu-desktop-line-height: inherit,
   $link-desktop-padding-horizontal: 1em,
   $background-color: inherit,
   $color: inherit
@@ -27,13 +26,15 @@
   }
 
   &__menu {
-    @include font-level($menu-font-level-mobile);
+    font-size: $menu-mobile-font-size;
+    line-height: $menu-mobile-line-height;
     text-align: center;
 
     @media (min-width: $breakpoint) {
       float: $menu-desktop-float;
       margin-right: -($link-desktop-padding-horizontal);
-      @include font-level($menu-font-level-desktop);
+      font-size: $menu-desktop-font-size;
+      line-height: $menu-desktop-line-height;
     }
   }
 
@@ -48,7 +49,7 @@
     padding-bottom: $unit-base;
 
     @media (min-width: $breakpoint) {
-      $link-desktop-padding-vertical: ($navbar-height - line-height($menu-font-level-desktop)) / 2;
+      $link-desktop-padding-vertical: ($navbar-height - $menu-desktop-line-height) / 2;
       padding: $link-desktop-padding-vertical $link-desktop-padding-horizontal;
     }
   }

@@ -23,7 +23,8 @@ $unit-base: (20 / 14) * 1rem;
     $navbar-height: 4 * $unit-base,
     $brand-height: 2 * $unit-base,
     $breakpoint: 50em,
-    $menu-font-level-mobile: 2,
+    $menu-mobile-font-size: font-size(2),
+    $menu-mobile-line-height: line-height(2),
     $link-desktop-padding-horizontal: $unit-base,
     $background-color: #0d0b11,
     $color: #fff
