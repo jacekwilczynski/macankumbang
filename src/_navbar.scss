@@ -5,7 +5,7 @@
   $navbar-height: 4 * $unit-base;
   $brand-height: 2 * $unit-base;
   $brand-padding-vertical: ($navbar-height - $brand-height) / 2;
-  $breakpoint: 52em;
+  $breakpoint: 50em;
   $menu-desktop-float: right;
   $menu-font-level-mobile: 2;
   $menu-font-level-desktop: 1;
@@ -28,6 +28,7 @@
 
     @media (min-width: $breakpoint) {
       float: $menu-desktop-float;
+      margin-right: -($link-desktop-padding-horizontal);
       @include font-level($menu-font-level-desktop);
     }
   }
