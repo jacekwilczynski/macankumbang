@@ -4,12 +4,6 @@
   $brand-height: 2rem,
   $toggler-height: 2rem,
   $breakpoint: 48em,
-  $menu-desktop-float: right,
-  $menu-mobile-font-size: inherit,
-  $menu-mobile-line-height: 2rem,
-  $menu-desktop-font-size: inherit,
-  $menu-desktop-line-height: 1rem,
-  $link-desktop-padding-horizontal: 1em,
   $background-color: inherit,
   $color: inherit
 ) {
@@ -28,7 +22,7 @@
   }
 
   &__toggler {
-    float: $menu-desktop-float;
+    float: right;
     padding-top: $toggler-padding-vertical;
 
     @media (min-width: $breakpoint) {
