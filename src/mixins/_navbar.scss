@@ -27,35 +27,6 @@
     padding-bottom: $brand-padding-vertical;
   }
 
-  &__menu {
-    font-size: $menu-mobile-font-size;
-    line-height: $menu-mobile-line-height;
-    text-align: center;
-
-    @media (min-width: $breakpoint) {
-      float: $menu-desktop-float;
-      margin-#{$menu-desktop-float}: -($link-desktop-padding-horizontal);
-      font-size: $menu-desktop-font-size;
-      line-height: $menu-desktop-line-height;
-    }
-  }
-
-  &__item {
-    @media (min-width: $breakpoint) {
-      float: left;
-    }
-  }
-
-  &__link {
-    display: block;
-    padding-bottom: $unit-base;
-
-    @media (min-width: $breakpoint) {
-      $link-desktop-padding-vertical: ($navbar-height - $menu-desktop-line-height) / 2;
-      padding: $link-desktop-padding-vertical $link-desktop-padding-horizontal;
-    }
-  }
-
   &__toggler {
     float: $menu-desktop-float;
     padding-top: $toggler-padding-vertical;

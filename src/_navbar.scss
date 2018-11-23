@@ -2,22 +2,45 @@
 @import 'typography/functions/line-height';
 @import 'mixins/navbar';
 @import 'mixins/hamburger';
+@import 'mixins/navbar-menu';
 
+$navbar-height: 4 * $unit-base;
+$navbar-breakpoint: 50em;
 $hamburger-height: 2 * $unit-base;
 
 .navbar {
   @include navbar(
     $unit-base: $unit-base,
-    $navbar-height: 4 * $unit-base,
+    $navbar-height: $navbar-height,
     $brand-height: 2 * $unit-base,
     $toggler-height: 2 * $unit-base,
-    $breakpoint: 50em,
+    $breakpoint: $navbar-breakpoint,
     $menu-mobile-font-size: font-size(2),
     $menu-mobile-line-height: line-height(2),
     $link-desktop-padding-horizontal: $unit-base,
     $background-color: #0d0b11,
     $color: #fff
   );
+}
+
+.navbar-menu {
+  @include navbar-menu(
+    $breakpoint: $navbar-breakpoint,
+    $mobile: (
+      link-padding-bottom: $unit-base
+    ),
+    $desktop: (
+      height: $navbar-height,
+      link-padding-horizontal: $unit-base
+    )
+  ) {
+    font-size: font-size(2);
+    text-align: center;
+
+    @media (min-width: $navbar-breakpoint) {
+      font-size: font-size(1);
+    }
+  };
 }
 
 .hamburger {

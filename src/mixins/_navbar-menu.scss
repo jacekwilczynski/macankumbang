@@ -1,0 +1,25 @@
+@mixin navbar-menu($breakpoint, $mobile, $desktop) {
+  @media (min-width: $breakpoint) {
+    margin-right: -(map_get($desktop, link-padding-horizontal));
+  }
+
+  &__item {
+    @media (min-width: $breakpoint) {
+      float: left;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: map_get($mobile, link-padding-bottom);
+
+    @media (min-width: $breakpoint) {
+      padding-bottom: 0;
+      padding-left: map_get($desktop, link-padding-horizontal);
+      padding-right: map_get($desktop, link-padding-horizontal);
+      line-height: map_get($desktop, height);
+    }
+  }
+
+  @content;
+}
