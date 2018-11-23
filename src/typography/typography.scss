@@ -1,23 +1,38 @@
 @import 'preferences';
 @import 'mixins/font-level';
 
-:root {
-  font-size: $font-size-base;
-  line-height: $unit-base / 1rem;
-}
-
-@for $i from 1 through 6 {
-  $font-level: 7 - $i;
-  h#{$i} {
-    @include font-level($font-level);
+@mixin typography-root {
+  :root {
+    font-size: $font-size-base;
+    line-height: $unit-base / 1rem;
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
-  margin-top: $unit-base;
-  margin-bottom: $unit-base;
+@mixin typography-heading-sizes {
+  @for $i from 1 through 6 {
+    $font-level: 7 - $i;
+    h#{$i} {
+      @include font-level($font-level);
+    }
+  }
 }
 
-ul, ol, dl {
-  padding-left: $unit-base;
+@mixin typography-vertical-margins {
+  h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    margin-top: $unit-base;
+    margin-bottom: $unit-base;
+  }
+}
+
+@mixin typography-list-padding {
+  ul, ol, dl {
+    padding-left: $unit-base;
+  }
+}
+
+@mixin typography-all {
+  @include typography-root;
+  @include typography-heading-sizes;
+  @include typography-vertical-margins;
+  @include typography-list-padding;
 }
