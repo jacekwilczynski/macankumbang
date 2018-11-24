@@ -16,10 +16,12 @@
 
   &__link {
     display: block;
-    padding-bottom: $mobile-link-padding-bottom;
+
+    @media not (min-width: $breakpoint) {
+      padding-bottom: $mobile-link-padding-bottom;
+    }
 
     @media (min-width: $breakpoint) {
-      padding-bottom: 0;
       padding-left: $desktop-link-padding-horizontal;
       padding-right: $desktop-link-padding-horizontal;
       line-height: $desktop-height;
