@@ -46,7 +46,12 @@ module.exports = function getWebpackConfig({
             {
               loader: 'postcss-loader',
               options: {
-                plugins: [require('autoprefixer')(), require('cssnano')()]
+                plugins: [
+                  require('autoprefixer')(),
+                  require('css-mqpacker')(),
+                  require('postcss-combine-duplicated-selectors')(),
+                  require('cssnano')()
+                ]
               }
             },
             'sass-loader'
