@@ -2,7 +2,8 @@
 
 @mixin navbar-menu($navbar-breakpoint, $navbar-height, $unit-base) {
   $mobile-link-padding-bottom: $unit-base;
-  $desktop-link-padding-horizontal: $unit-base;
+  $desktop-distance-between-links: 3 * $unit-base;
+  $desktop-link-padding-horizontal: $desktop-distance-between-links / 2;
   $desktop-line-height: $navbar-height;
   $desktop-float: right;
 

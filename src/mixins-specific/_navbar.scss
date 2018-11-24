@@ -6,7 +6,7 @@
 @mixin navbar($unit-base) {
   $navbar-height-full: 4 * $unit-base;
   $navbar-height-min: 3 * $unit-base;
-  $navbar-breakpoint: 50em;
+  $navbar-breakpoint: 52em;
 
   .navbar {
     @include navbar-outer(
