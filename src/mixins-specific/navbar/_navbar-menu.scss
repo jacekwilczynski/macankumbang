@@ -1,10 +1,6 @@
 @import '../../typography/mixins/font-level';
 
-@mixin navbar-menu(
-  $navbar-breakpoint,
-  $navbar-height,
-  $unit-base
-) {
+@mixin navbar-menu($navbar-breakpoint, $navbar-height, $unit-base) {
   $mobile-link-padding-bottom: $unit-base;
   $desktop-link-padding-horizontal: $unit-base;
   $desktop-line-height: $navbar-height;

@@ -1,11 +1,11 @@
 @import 'navbar/navbar-outer';
 @import 'navbar/navbar-brand';
+@import 'navbar/navbar-toggler';
 @import 'navbar/navbar-menu';
 
-@mixin navbar(
-  $unit-base
-) {
+@mixin navbar($unit-base) {
   $navbar-height: 4 * $unit-base;
+  $navbar-breakpoint: 50em;
 
   .navbar {
     @include navbar-outer;
@@ -15,11 +15,19 @@
     @include navbar-brand($navbar-height: $navbar-height);
   }
 
+  .navbar-toggler {
+    @include navbar-toggler(
+      $unit-base: $unit-base,
+      $navbar-height: $navbar-height,
+      $navbar-breakpoint: $navbar-breakpoint
+    );
+  }
+
   .navbar-menu {
     @include navbar-menu(
-      $navbar-breakpoint: 50em,
+      $navbar-breakpoint: $navbar-breakpoint,
       $navbar-height: $navbar-height,
       $unit-base: $unit-base
-    )
+    );
   }
 }

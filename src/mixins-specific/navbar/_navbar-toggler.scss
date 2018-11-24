@@ -1,0 +1,14 @@
+@import '../../mixins-general/hamburger';
+
+@mixin navbar-toggler($unit-base, $navbar-height, $navbar-breakpoint) {
+  $width: 2.5 * $unit-base;
+  $height: 2 * $unit-base;
+  @include hamburger($width, $height, currentColor);
+
+  float: right;
+  padding-top: ($navbar-height - $height) / 2;
+
+  @media (min-width: $navbar-breakpoint) {
+    display: none;
+  }
+}
