@@ -1,5 +1,5 @@
 @import '../../utils/pow';
-@import '../preferences';
+@import '../variables-defaults';
 
 @function font-size($level) {
   @return pow($font-growth-factor, $level - 1) * 1rem;

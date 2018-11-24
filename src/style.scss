@@ -1,8 +1,8 @@
 //
 // Logic (no CSS output)
 //
-@import 'preferences/typography';
-@import 'typography/typography';
+@import 'variables/typography';
+@import 'typography/mixins/rules';
 @import 'mixins-general/container';
 @import 'mixins-specific/navbar';
 //
@@ -11,7 +11,7 @@
 @import 'global';
 @import 'misc';
 
-@include typography-all;
+@include typography-rules-all;
 
 .container {
   @include container(

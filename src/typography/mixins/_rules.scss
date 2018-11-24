@@ -1,0 +1,38 @@
+@import '../variables-defaults';
+@import 'font-level';
+
+@mixin typography-rule-root {
+  :root {
+    font-size: $font-size-base;
+    line-height: $unit-base / 1rem;
+  }
+}
+
+@mixin typography-rule-headings {
+  @for $i from 1 through 6 {
+    $font-level: 7 - $i;
+    h#{$i} {
+      @include font-level($font-level);
+    }
+  }
+}
+
+@mixin typography-rule-vertical-margins {
+  h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    margin-top: $unit-base;
+    margin-bottom: $unit-base;
+  }
+}
+
+@mixin typography-rule-list-padding {
+  ul, ol, dl {
+    padding-left: $unit-base;
+  }
+}
+
+@mixin typography-rules-all {
+  @include typography-rule-root;
+  @include typography-rule-headings;
+  @include typography-rule-vertical-margins;
+  @include typography-rule-list-padding;
+}
