@@ -4,7 +4,8 @@
 @import 'navbar/navbar-menu';
 
 @mixin navbar($unit-base) {
-  $navbar-height: 4 * $unit-base;
+  $navbar-height-full: 4 * $unit-base;
+  $navbar-height-min: 3 * $unit-base;
   $navbar-breakpoint: 50em;
 
   .navbar {
@@ -12,13 +13,16 @@
   }
 
   .navbar-brand {
-    @include navbar-brand($navbar-height: $navbar-height);
+    @include navbar-brand(
+      $navbar-height-full: $navbar-height-full,
+      $navbar-height-min: $navbar-height-min,
+      $navbar-breakpoint: $navbar-breakpoint
+    );
   }
 
   .navbar-toggler {
     @include navbar-toggler(
-      $unit-base: $unit-base,
-      $navbar-height: $navbar-height,
+      $navbar-height: $navbar-height-min,
       $navbar-breakpoint: $navbar-breakpoint
     );
   }
@@ -26,7 +30,7 @@
   .navbar-menu {
     @include navbar-menu(
       $navbar-breakpoint: $navbar-breakpoint,
-      $navbar-height: $navbar-height,
+      $navbar-height: $navbar-height-full,
       $unit-base: $unit-base
     );
   }

@@ -1,4 +1,12 @@
-@mixin navbar-brand($navbar-height) {
-  font-size: $navbar-height / 2;
-  line-height: $navbar-height;
+@mixin navbar-brand(
+  $navbar-height-full,
+  $navbar-height-min,
+  $navbar-breakpoint
+) {
+  font-size: $navbar-height-min / 2;
+  line-height: $navbar-height-min;
+
+  @media (min-width: $navbar-breakpoint) {
+    line-height: $navbar-height-full;
+  }
 }
