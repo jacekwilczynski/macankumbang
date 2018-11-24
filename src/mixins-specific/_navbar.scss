@@ -1,0 +1,25 @@
+@import 'navbar/navbar-outer';
+@import 'navbar/navbar-brand';
+@import 'navbar/navbar-menu';
+
+@mixin navbar(
+  $unit-base
+) {
+  $navbar-height: 4 * $unit-base;
+
+  .navbar {
+    @include navbar-outer;
+  }
+
+  .navbar-brand {
+    @include navbar-brand($navbar-height: $navbar-height);
+  }
+
+  .navbar-menu {
+    @include navbar-menu(
+      $navbar-breakpoint: 50em,
+      $navbar-height: $navbar-height,
+      $unit-base: $unit-base
+    )
+  }
+}

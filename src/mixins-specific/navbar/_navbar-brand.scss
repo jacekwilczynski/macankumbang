@@ -1,0 +1,4 @@
+@mixin navbar-brand($navbar-height) {
+  font-size: $navbar-height / 2;
+  line-height: $navbar-height;
+}

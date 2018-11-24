@@ -1,0 +1,41 @@
+@import '../../typography/mixins/font-level';
+
+@mixin navbar-menu(
+  $navbar-breakpoint,
+  $navbar-height,
+  $unit-base
+) {
+  $mobile-link-padding-bottom: $unit-base;
+  $desktop-link-padding-horizontal: $unit-base;
+  $desktop-line-height: $navbar-height;
+  $desktop-float: right;
+
+  @include font-level(2);
+
+  @media (min-width: $navbar-breakpoint) {
+    float: $desktop-float;
+    margin-right: -($mobile-link-padding-bottom);
+    @include font-level(1);
+  }
+
+  &__item {
+    @media (min-width: $navbar-breakpoint) {
+      float: left;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @media not all and (min-width: $navbar-breakpoint) {
+      padding-bottom: $mobile-link-padding-bottom;
+      text-align: center;
+    }
+
+    @media (min-width: $navbar-breakpoint) {
+      line-height: $desktop-line-height;
+      padding-left: $desktop-link-padding-horizontal;
+      padding-right: $desktop-link-padding-horizontal;
+    }
+  }
+}

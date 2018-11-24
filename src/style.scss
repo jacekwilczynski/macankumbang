@@ -3,15 +3,13 @@
 //
 @import 'preferences/typography';
 @import 'typography/typography';
-@import 'utils/list-unstyled';
-@import 'utils/button-unstyled';
-@import 'utils/clearfix';
-@import 'mixins/container';
+@import 'mixins-general/container';
+@import 'mixins-specific/navbar';
 //
 // CSS output
 //
 @import 'global';
-@import 'navbar';
+@import 'misc';
 
 @include typography-all;
 
@@ -21,3 +19,5 @@
     $padding-horizontal: $unit-base
   );
 }
+
+@include navbar($unit-base);
