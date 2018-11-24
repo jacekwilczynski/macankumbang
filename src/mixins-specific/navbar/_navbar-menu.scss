@@ -8,6 +8,17 @@
 
   @include font-level(2);
 
+  @media not all and (min-width: $navbar-breakpoint) {
+    float: left;
+    width: 100%;
+    padding-top: 0.5 * $unit-base;
+    transition: margin-top 0.5s;
+
+    &__toggler:not(:checked) + & {
+      margin-top: -100%;
+    }
+  }
+
   @media (min-width: $navbar-breakpoint) {
     float: $desktop-float;
     margin-right: -($mobile-link-padding-bottom);

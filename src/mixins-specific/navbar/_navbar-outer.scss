@@ -1,4 +1,21 @@
-@mixin navbar-outer {
-  background-color: #0d0b11;
+@mixin navbar-outer(
+  $navbar-height-min,
+  $navbar-height-full,
+  $navbar-breakpoint
+) {
+  $background: linear-gradient(#000, #0d0b11);
+  background: $background;
   color: #fff;
+
+  @media not all and (min-width: $navbar-breakpoint) {
+    min-height: $navbar-height-min;
+  }
+
+  &--thin {
+    min-height: $navbar-height-min;
+  }
+
+  @media (min-width: $navbar-breakpoint) {
+    min-height: $navbar-height-full;
+  }
 }

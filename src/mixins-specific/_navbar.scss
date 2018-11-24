@@ -9,7 +9,11 @@
   $navbar-breakpoint: 50em;
 
   .navbar {
-    @include navbar-outer;
+    @include navbar-outer(
+      $navbar-height-full: $navbar-height-full,
+      $navbar-height-min: $navbar-height-min,
+      $navbar-breakpoint: $navbar-breakpoint
+    );
   }
 
   .navbar-brand {
