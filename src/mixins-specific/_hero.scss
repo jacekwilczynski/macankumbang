@@ -1,0 +1,25 @@
+@import 'hero/hero-box-common';
+@import 'hero/hero-box-customize';
+
+@mixin hero($unit-base) {
+  .hero {
+    background-color: #161828;
+  }
+
+  .hero-box {
+    $border-radius: $unit-base / 5;
+
+    @include hero-box-common($border-radius: $border-radius);
+
+    @include hero-box-customize(
+      $modifier: 'bright',
+      $depth-size: $unit-base,
+      $border-radius: $border-radius,
+      $width: 23 * $unit-base,
+      $height: 17 * $unit-base,
+      $color-front: #f5f5f5
+    ) {
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@mixin hero-box-common($border-radius) {
+  position: relative;
+
+  &__depth {
+    height: 100%;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  &__front {
+    position: absolute;
+    border-radius: $border-radius;
+  }
+}

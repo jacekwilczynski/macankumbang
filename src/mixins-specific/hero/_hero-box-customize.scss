@@ -1,0 +1,42 @@
+@import '../../utils/strip-unit';
+@import '../../utils/pow';
+@import '../../utils/sqrt';
+
+@mixin hero-box-customize(
+  $width,
+  $height,
+  $depth-size,
+  $border-radius,
+  $modifier,
+  $color-front
+) {
+  $color-depth: rgba($color-front, 0.5);
+
+  &--#{$modifier} {
+    width: $width + $depth-size;
+    height: $height + $depth-size;
+    @content;
+  }
+
+  &--#{$modifier} &__depth {
+    $gradient-offset: $depth-size + $border-radius / 2;
+    $gradient-offset-unit: unit($gradient-offset);
+    $gradient-offset-unitless: strip-unit($gradient-offset);
+    $cut-size: sqrt(2 * pow($gradient-offset-unitless, 2)) / 2 * 1#{$gradient-offset-unit};
+    background-image: linear-gradient(
+      135deg,
+      transparent $cut-size,
+      $color-depth $cut-size,
+      $color-depth calc(100% - #{$cut-size}),
+      transparent calc(100% - #{$cut-size})
+    );
+  }
+
+  &--#{$modifier} &__front {
+    width: $width;
+    height: $height;
+    left: $depth-size;
+    bottom: $depth-size;
+    background-color: $color-front;
+  }
+}

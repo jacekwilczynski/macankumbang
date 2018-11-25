@@ -5,6 +5,7 @@
 @import 'typography/mixins/rules';
 @import 'mixins-general/container';
 @import 'mixins-specific/navbar';
+@import 'mixins-specific/hero';
 //
 // CSS output
 //
@@ -21,3 +22,5 @@
 }
 
 @include navbar($unit-base);
+
+@include hero($unit-base);
